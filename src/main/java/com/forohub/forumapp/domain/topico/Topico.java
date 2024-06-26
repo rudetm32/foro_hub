@@ -40,4 +40,16 @@ public class Topico {
         this.fecha_creacion = LocalDateTime.now();
         this.curso = curso;
     }
+
+    public void actualizarTopico(DatosActualizarTopico datosActualizarTopico) {
+        if(datosActualizarTopico.titulo() != null){
+            this.titulo =datosActualizarTopico.titulo();
+        }
+        if(datosActualizarTopico.mensaje() != null){
+            this.mensaje=datosActualizarTopico.mensaje();
+        }
+        if (datosActualizarTopico.status() != null){
+            this.status=datosActualizarTopico.status();
+        }
+    }
 }

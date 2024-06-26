@@ -82,4 +82,14 @@ public class TopicoService {
                 }
         );
     }
+
+    public void actualizarDatosTopico(DatosActualizarTopico datosActualizarTopico) {
+        Optional<Topico> topicoActualizado = topicoRepository.findById(datosActualizarTopico.id());
+            topicoActualizado.ifPresentOrElse(
+                    topico-> topico.actualizarTopico(datosActualizarTopico),
+                    () -> {
+                        throw new EntityNotFoundException("Tópico mo encontrado con ID: " + datosActualizarTopico.id());
+                    }
+            );
+    }
 }

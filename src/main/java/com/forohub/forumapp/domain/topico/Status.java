@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.forohub.forumapp.infra.errores.ValidacionDeIntegridad;
 
 public enum Status {
-    ABIERTO("ABIERTO"),
+    ACTIVO("ACTIVO"),
     CERRADO("CERRADO"),
     RESUELTO("RESUELTO");
 

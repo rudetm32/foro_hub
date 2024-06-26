@@ -4,6 +4,7 @@ CREATE TABLE cursos (
 );
 
 INSERT INTO cursos (titulo) VALUES
-    ('Curso de Programación'),
-    ('Curso de Matemáticas'),
-    ('Curso de Historia');
+    ('Fundamentos de Java y Programación Orientada a Objetos'),
+    ('Desarrollo de Aplicaciones con Spring Boot'),
+    ('Introducción a SQL y Gestión de Bases de Datos'),
+    ('Consultas Avanzadas y Optimización en SQL');

@@ -2,4 +2,4 @@
 
 -- Añadir columna 'status' a la tabla 'topicos'
 ALTER TABLE topicos
-ADD COLUMN status ENUM('ABIERTO', 'CERRADO', 'RESUELTO') NOT NULL DEFAULT 'ABIERTO';
+ADD COLUMN  status ENUM('ACTIVO', 'CERRADO', 'RESUELTO') NOT NULL DEFAULT 'ACTIVO';

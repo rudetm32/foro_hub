@@ -43,7 +43,7 @@ public class TopicoController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<DatosListadoTopico>> listaTopicos(@PageableDefault(size = 5, sort = "titulo") Pageable paginacion) {
+    public ResponseEntity<Page<DatosListadoTopico>> listaTopicos(@PageableDefault(size = 10, sort = "autor") Pageable paginacion) {
         Page<Topico> topicos = topicoService.listarTopicosOrdenados(paginacion);
         Page<DatosListadoTopico> datosListadoTopicos = topicos.map(topico -> new DatosListadoTopico(topico, topico.getCurso()));
 
@@ -63,6 +63,16 @@ public class TopicoController {
             return ResponseEntity.noContent().build();
         } catch (EntityNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Tópico no encontrado con ID: " + id);
+        }
+    }
+
+    @PutMapping
+    public ResponseEntity<?> actualizarDatos(@RequestBody  @Valid DatosActualizarTopico datosActualizarTopico){
+        try {
+            topicoService.actualizarDatosTopico(datosActualizarTopico);
+            return ResponseEntity.ok().build();
+        } catch (EntityNotFoundException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Tópico no encontrado con ID: " +  datosActualizarTopico.id());
         }
     }
 }
