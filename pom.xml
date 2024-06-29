@@ -12,7 +12,7 @@
 	<artifactId>forumapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>forumapp</name>
-	<description>A platform for discussions, questions, and answers on various topics</description>
+	<description>A platform for discussions, questions and answers on various topics</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -66,6 +66,11 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>4.2.1</version>
 		</dependency>
 	</dependencies>
 
